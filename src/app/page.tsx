@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card'
 import { HeroHeader } from '@/components/header'
 import { Logo } from '@/components/logo'
 import { ChevronRight, CreditCard, Shield, Eye, Lock, Bell, Smartphone, Zap, Check } from 'lucide-react'
-// Using text labels for agent frameworks and 3D icons for use cases
+import { OpenClawLogo, AtlasLogo, CometLogo, BrowserUseLogo } from '@/components/ui/svgs/agent-logos'
 
 export default function HeroSection() {
     const [email, setEmail] = useState('')
@@ -130,11 +130,25 @@ export default function HeroSection() {
                             <div className="mt-20 pt-12 border-t">
                                 <p className="text-center text-sm text-muted-foreground mb-6">Works with any agent that browses or calls APIs</p>
                                 <div className="flex flex-wrap justify-center gap-3">
-                                    {['OpenClaw', 'Operator', 'Browser Use', 'AutoGPT', 'CrewAI', 'LangChain'].map((name) => (
-                                        <Card key={name} className="flex h-10 items-center justify-center rounded-xl px-4 shadow-sm sm:h-11">
-                                            <span className="text-nowrap font-medium text-xs sm:text-sm">{name}</span>
-                                        </Card>
-                                    ))}
+                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                        <OpenClawLogo className="size-5" />
+                                        <span className="text-nowrap font-medium text-sm">OpenClaw</span>
+                                    </Card>
+                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                        <AtlasLogo className="size-5" />
+                                        <span className="text-nowrap font-medium text-sm">Atlas</span>
+                                    </Card>
+                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                        <CometLogo className="size-5" />
+                                        <span className="text-nowrap font-medium text-sm">Comet</span>
+                                    </Card>
+                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                        <BrowserUseLogo className="size-5" />
+                                        <span className="text-nowrap font-medium text-sm">Browser Use</span>
+                                    </Card>
+                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm bg-muted/50">
+                                        <span className="text-nowrap font-medium text-sm text-muted-foreground">+ Any Agent</span>
+                                    </Card>
                                 </div>
                             </div>
                         </div>
