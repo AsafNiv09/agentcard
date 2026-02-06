@@ -1,15 +1,13 @@
 'use client'
 import Link from 'next/link'
-import { Logo } from '@/components/logo'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, CreditCard } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'Company', href: '#link' },
+    { name: 'Features', href: '#features' },
+    { name: 'Waitlist', href: '#waitlist' },
 ]
 
 export const HeroHeader = () => {
@@ -23,6 +21,7 @@ export const HeroHeader = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+    
     return (
         <header>
             <nav
@@ -35,7 +34,10 @@ export const HeroHeader = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <Logo />
+                                <div className="flex size-8 items-center justify-center rounded-full bg-foreground">
+                                  <CreditCard className="size-4 text-background" />
+                                </div>
+                                <span className="font-semibold">AgentCard</span>
                             </Link>
 
                             <button
@@ -83,27 +85,9 @@ export const HeroHeader = () => {
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button
                                     asChild
-                                    variant="ghost"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span>Login</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span>Sign Up</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
-                                        <span>Get Started</span>
+                                    size="sm">
+                                    <Link href="#waitlist">
+                                        <span>Join Waitlist</span>
                                     </Link>
                                 </Button>
                             </div>
