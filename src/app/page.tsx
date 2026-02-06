@@ -8,12 +8,7 @@ import { Card } from '@/components/ui/card'
 import { HeroHeader } from '@/components/header'
 import { Logo } from '@/components/logo'
 import { ChevronRight, CreditCard, Shield, Eye, Lock, Bell, Smartphone, Zap, Check } from 'lucide-react'
-import { OpenClaw } from '@/components/ui/svgs/openclaw'
-import { AutoGPT } from '@/components/ui/svgs/autogpt'
-import { CrewAI } from '@/components/ui/svgs/crewai'
-import { LangChain } from '@/components/ui/svgs/langchain'
-import { BrowserUse } from '@/components/ui/svgs/browseruse'
-import { Operator } from '@/components/ui/svgs/operator'
+// Using text labels for agent frameworks and 3D icons for use cases
 
 export default function HeroSection() {
     const [email, setEmail] = useState('')
@@ -134,31 +129,12 @@ export default function HeroSection() {
                             {/* Logo Cloud */}
                             <div className="mt-20 pt-12 border-t">
                                 <p className="text-center text-sm text-muted-foreground mb-6">Works with any agent that browses or calls APIs</p>
-                                <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11">
-                                        <OpenClaw className="size-4 text-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">OpenClaw</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11">
-                                        <Operator className="size-4 text-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Operator</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11">
-                                        <BrowserUse className="size-4 text-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Browser Use</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11 max-sm:hidden">
-                                        <AutoGPT className="size-4 text-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">AutoGPT</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11 max-sm:hidden">
-                                        <CrewAI className="size-4 text-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">CrewAI</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11 max-sm:hidden">
-                                        <LangChain className="size-4 text-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">LangChain</span>
-                                    </Card>
+                                <div className="flex flex-wrap justify-center gap-3">
+                                    {['OpenClaw', 'Operator', 'Browser Use', 'AutoGPT', 'CrewAI', 'LangChain'].map((name) => (
+                                        <Card key={name} className="flex h-10 items-center justify-center rounded-xl px-4 shadow-sm sm:h-11">
+                                            <span className="text-nowrap font-medium text-xs sm:text-sm">{name}</span>
+                                        </Card>
+                                    ))}
                                 </div>
                             </div>
                         </div>
@@ -266,15 +242,15 @@ export default function HeroSection() {
                         </div>
                         <div className="grid gap-3 sm:grid-cols-2">
                             {[
-                                { emoji: '🍕', text: 'Order food and groceries', desc: 'Weekly meal prep, snack runs' },
-                                { emoji: '✈️', text: 'Book flights and hotels', desc: 'Travel planning on autopilot' },
-                                { emoji: '🎫', text: 'Purchase event tickets', desc: 'Concerts, shows, experiences' },
-                                { emoji: '📦', text: 'Manage subscriptions', desc: 'SaaS tools, streaming services' },
-                                { emoji: '🛠️', text: 'Buy APIs and tools', desc: 'Dev resources, cloud services' },
-                                { emoji: '🎁', text: 'Send gifts', desc: 'Birthdays, thank-yous, surprises' },
+                                { icon: '/icons/restaurant.png', text: 'Order food and groceries', desc: 'Weekly meal prep, snack runs' },
+                                { icon: '/icons/airplane.png', text: 'Book flights and hotels', desc: 'Travel planning on autopilot' },
+                                { icon: '/icons/party-popper.png', text: 'Purchase event tickets', desc: 'Concerts, shows, experiences' },
+                                { icon: '/icons/clipboard.png', text: 'Manage subscriptions', desc: 'SaaS tools, streaming services' },
+                                { icon: '/icons/rocket.png', text: 'Buy APIs and tools', desc: 'Dev resources, cloud services' },
+                                { icon: '/icons/gift.png', text: 'Send gifts', desc: 'Birthdays, thank-yous, surprises' },
                             ].map((item, i) => (
                                 <Card key={i} className="flex items-center gap-4 p-4 border rounded-xl">
-                                    <span className="text-2xl">{item.emoji}</span>
+                                    <img src={item.icon} alt="" className="size-10 object-contain" />
                                     <div>
                                         <span className="font-medium text-sm">{item.text}</span>
                                         <p className="text-muted-foreground text-xs">{item.desc}</p>
