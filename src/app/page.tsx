@@ -2,12 +2,11 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { HeroHeader } from '@/components/header'
-import { Logo, LogoIcon } from '@/components/logo'
+import { Logo } from '@/components/logo'
 import { ChevronRight, CreditCard, Shield, Eye, Lock } from 'lucide-react'
 import { OpenAI } from '@/components/ui/svgs/openai'
 import { Anthropic } from '@/components/ui/svgs/anthropic'
@@ -41,15 +40,9 @@ export default function HeroSection() {
                 {/* Hero Section */}
                 <section className="bg-background">
                     <div className="relative py-32 md:pt-44">
-                        <div className="mask-radial-from-45% mask-radial-to-75% mask-radial-at-top mask-radial-[75%_100%] mask-t-from-50% lg:aspect-9/4 absolute inset-0 aspect-square lg:top-24 dark:opacity-5">
-                            <Image
-                                src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2271&auto=format&fit=crop"
-                                alt="hero background"
-                                width={2268}
-                                height={1740}
-                                className="size-full object-cover object-top"
-                            />
-                        </div>
+                        {/* Gradient background instead of broken image */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card opacity-50" />
+                        
                         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
                             <div className="mx-auto max-w-md text-center">
                                 <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl">A credit card for your AI agent.</h1>
@@ -64,62 +57,46 @@ export default function HeroSection() {
                                     </Link>
                                 </Button>
                             </div>
-                            <div className="mx-auto mt-24 max-w-xl">
-                                <div className="**:fill-foreground grid scale-95 grid-cols-3 gap-12">
-                                    <div className="ml-auto blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <OpenAI className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">OpenAI</span>
-                                        </Card>
-                                    </div>
-                                    <div className="ml-auto">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <Claude className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Claude</span>
-                                        </Card>
-                                    </div>
-                                    <div className="ml-auto blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <OpenClaw className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">OpenClaw</span>
-                                        </Card>
-                                    </div>
-                                    <div className="mr-auto">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <LangChain className="size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">LangChain</span>
-                                        </Card>
-                                    </div>
-                                    <div className="blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <AutoGPT className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">AutoGPT</span>
-                                        </Card>
-                                    </div>
-                                    <div>
-                                        <Card className="shadow-foreground/10 mx-a flex h-10 h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <CrewAI className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">CrewAI</span>
-                                        </Card>
-                                    </div>
-                                    <div className="ml-auto blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <Stripe className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Stripe</span>
-                                        </Card>
-                                    </div>
-                                    <div>
-                                        <Card className="shadow-foreground/10 mx-a flex h-10 h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <Anthropic className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Anthropic</span>
-                                        </Card>
-                                    </div>
-                                    <div className="blur-[2px]">
-                                        <Card className="shadow-foreground/10 flex h-8 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4">
-                                            <Vercel className="size-3 sm:size-4" />
-                                            <span className="text-nowrap font-medium max-sm:text-xs">Vercel</span>
-                                        </Card>
-                                    </div>
+                            
+                            {/* Logo Cloud */}
+                            <div className="mx-auto mt-20 max-w-xl">
+                                <div className="grid grid-cols-3 gap-4 sm:gap-6">
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm opacity-60 sm:h-12 sm:px-4">
+                                        <OpenAI className="size-4 fill-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">OpenAI</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-12 sm:px-4">
+                                        <Claude className="size-4 fill-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Claude</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm opacity-60 sm:h-12 sm:px-4">
+                                        <OpenClaw className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">OpenClaw</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-12 sm:px-4">
+                                        <LangChain className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">LangChain</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm opacity-60 sm:h-12 sm:px-4">
+                                        <AutoGPT className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">AutoGPT</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-12 sm:px-4">
+                                        <CrewAI className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">CrewAI</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm opacity-60 sm:h-12 sm:px-4">
+                                        <Stripe className="size-4 fill-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Stripe</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-12 sm:px-4">
+                                        <Anthropic className="size-4 fill-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Anthropic</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm opacity-60 sm:h-12 sm:px-4">
+                                        <Vercel className="size-4 fill-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Vercel</span>
+                                    </Card>
                                 </div>
                             </div>
                         </div>
@@ -127,47 +104,47 @@ export default function HeroSection() {
                 </section>
 
                 {/* Features Section */}
-                <section id="features" className="bg-background @container py-24">
+                <section id="features" className="bg-background py-24">
                     <div className="mx-auto max-w-2xl px-6">
                         <div>
-                            <h2 className="text-balance font-serif text-4xl font-medium">Everything you need to trust your agent with money.</h2>
+                            <h2 className="text-balance font-serif text-3xl font-medium sm:text-4xl">Everything you need to trust your agent with money.</h2>
                             <p className="text-muted-foreground mt-4 text-balance">Simple, secure, and always under your control.</p>
                         </div>
-                        <div className="@xl:grid-cols-2 mt-12 grid gap-3 *:p-6">
-                            <Card variant="outline" className="row-span-2 grid grid-rows-subgrid">
+                        <div className="mt-12 grid gap-4 sm:grid-cols-2">
+                            <Card className="p-6 border rounded-2xl">
                                 <div className="space-y-2">
                                     <h3 className="text-foreground font-medium">Virtual Card</h3>
                                     <p className="text-muted-foreground text-sm">Issue a dedicated virtual card for your AI agent. Completely separate from your personal finances.</p>
                                 </div>
-                                <div aria-hidden className="flex h-44 flex-col justify-center items-center">
-                                    <CreditCard className="size-20 stroke-[0.5px] opacity-15" />
+                                <div className="flex h-32 items-center justify-center mt-4">
+                                    <CreditCard className="size-16 stroke-[0.75px] text-muted-foreground/30" />
                                 </div>
                             </Card>
-                            <Card variant="outline" className="row-span-2 grid grid-rows-subgrid">
+                            <Card className="p-6 border rounded-2xl">
                                 <div className="space-y-2">
                                     <h3 className="text-foreground font-medium">Spending Limits</h3>
-                                    <p className="text-muted-foreground text-sm">Set daily, weekly, or monthly budgets. Your agent physically can't spend more than you allow.</p>
+                                    <p className="text-muted-foreground text-sm">Set daily, weekly, or monthly budgets. Your agent physically can&apos;t spend more than you allow.</p>
                                 </div>
-                                <div aria-hidden className="flex h-44 flex-col justify-center items-center">
-                                    <Lock className="size-20 stroke-[0.5px] opacity-15" />
+                                <div className="flex h-32 items-center justify-center mt-4">
+                                    <Lock className="size-16 stroke-[0.75px] text-muted-foreground/30" />
                                 </div>
                             </Card>
-                            <Card variant="outline" className="row-span-2 grid grid-rows-subgrid overflow-hidden">
+                            <Card className="p-6 border rounded-2xl">
                                 <div className="space-y-2">
                                     <h3 className="text-foreground font-medium">Approval Required</h3>
                                     <p className="text-muted-foreground text-sm">Every purchase needs your OK. Get a push notification, approve or deny with one tap.</p>
                                 </div>
-                                <div aria-hidden className="relative h-44 flex items-center justify-center">
-                                    <Shield className="size-20 stroke-[0.5px] opacity-15" />
+                                <div className="flex h-32 items-center justify-center mt-4">
+                                    <Shield className="size-16 stroke-[0.75px] text-muted-foreground/30" />
                                 </div>
                             </Card>
-                            <Card variant="outline" className="row-span-2 grid grid-rows-subgrid">
+                            <Card className="p-6 border rounded-2xl">
                                 <div className="space-y-2">
                                     <h3 className="font-medium">Full Visibility</h3>
                                     <p className="text-muted-foreground text-sm">Real-time transaction feed. See what your agent is buying, when, and from whom.</p>
                                 </div>
-                                <div className="pointer-events-none relative flex h-44 items-center justify-center">
-                                    <Eye className="size-20 stroke-[0.5px] opacity-15" />
+                                <div className="flex h-32 items-center justify-center mt-4">
+                                    <Eye className="size-16 stroke-[0.75px] text-muted-foreground/30" />
                                 </div>
                             </Card>
                         </div>
@@ -175,10 +152,10 @@ export default function HeroSection() {
                 </section>
 
                 {/* Call to Action */}
-                <section id="waitlist" className="bg-background @container py-24">
+                <section id="waitlist" className="bg-card py-24">
                     <div className="mx-auto max-w-2xl px-6">
                         <div className="text-center">
-                            <h2 className="text-balance font-serif text-4xl font-medium">Get Early Access</h2>
+                            <h2 className="text-balance font-serif text-3xl font-medium sm:text-4xl">Get Early Access</h2>
                             <p className="text-muted-foreground mx-auto mt-4 max-w-md text-balance">Join the waitlist and be first to know when AgentCard launches.</p>
                             
                             {!submitted ? (
@@ -189,7 +166,7 @@ export default function HeroSection() {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         required
-                                        className="border-input bg-card focus:border-ring focus:ring-ring/15 w-full rounded-xl border px-4 py-3 text-base outline-none focus:ring-[3px]"
+                                        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-base outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                                     />
                                     
                                     <textarea
@@ -197,7 +174,7 @@ export default function HeroSection() {
                                         value={useCase}
                                         onChange={(e) => setUseCase(e.target.value)}
                                         rows={3}
-                                        className="border-input bg-card focus:border-ring focus:ring-ring/15 w-full resize-none rounded-xl border px-4 py-3 text-base outline-none focus:ring-[3px]"
+                                        className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-base outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
                                     />
 
                                     <Button type="submit" disabled={loading} className="w-full pr-1.5">
@@ -207,7 +184,7 @@ export default function HeroSection() {
                                 </form>
                             ) : (
                                 <div className="mx-auto mt-8 max-w-sm">
-                                    <Card variant="soft" className="p-6">
+                                    <Card className="p-6 bg-emerald-50 border-emerald-200">
                                         <div className="flex items-center justify-center gap-3">
                                             <div className="flex size-12 items-center justify-center rounded-full bg-emerald-100">
                                                 <svg className="size-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -215,8 +192,8 @@ export default function HeroSection() {
                                                 </svg>
                                             </div>
                                             <div className="text-left">
-                                                <p className="font-semibold">You&apos;re on the list!</p>
-                                                <p className="text-muted-foreground text-sm">We&apos;ll notify you when we launch.</p>
+                                                <p className="font-semibold text-emerald-900">You&apos;re on the list!</p>
+                                                <p className="text-sm text-emerald-700">We&apos;ll notify you when we launch.</p>
                                             </div>
                                         </div>
                                     </Card>
@@ -228,7 +205,7 @@ export default function HeroSection() {
             </main>
 
             {/* Footer */}
-            <footer className="bg-background @container border-t py-12">
+            <footer className="bg-background border-t py-12">
                 <div className="mx-auto max-w-2xl px-6">
                     <div className="flex flex-col items-center gap-4 text-center">
                         <Link
