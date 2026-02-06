@@ -50,126 +50,136 @@ export default function HeroSection() {
             <HeroHeader />
             <main className="overflow-hidden">
                 {/* Hero Section */}
-                <section className="bg-background">
+                <section className="bg-background relative">
+                    {/* Premium Gradient Mesh Background */}
+                    <div className="absolute inset-0 overflow-hidden">
+                        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-amber-200/40 to-orange-100/30 blur-3xl" />
+                        <div className="absolute top-20 -left-40 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-stone-200/50 to-amber-100/30 blur-3xl" />
+                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-gradient-to-t from-amber-100/30 to-transparent blur-3xl" />
+                    </div>
+                    
                     <div className="relative pb-32 pt-44">
-                        {/* Background Image with Radial Mask */}
-                        <div className="absolute inset-0 aspect-square opacity-50 dark:opacity-10 md:aspect-[9/4]" style={{
-                            maskImage: 'radial-gradient(ellipse 75% 100% at top, black 45%, transparent 75%)',
-                            WebkitMaskImage: 'radial-gradient(ellipse 75% 100% at top, black 45%, transparent 75%)'
-                        }}>
-                            <Image
-                                src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2232&auto=format&fit=crop"
-                                alt="hero background"
-                                fill
-                                className="object-cover object-top"
-                                priority
-                            />
-                        </div>
                         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
-                            <div className="grid gap-12 md:grid-cols-2 md:items-center">
-                                {/* Left: Copy */}
-                                <div>
-                                    <div className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-sm shadow-sm mb-6">
-                                        <span className="size-2 animate-pulse rounded-full bg-emerald-500" />
-                                        <span className="text-muted-foreground">Join 847 people on the waitlist</span>
+                            {/* Floating Agent Cards Above */}
+                            <div className="mx-auto mb-16 max-w-xl lg:mb-20">
+                                <div className="grid scale-95 grid-cols-3 gap-8 sm:gap-12">
+                                    <div className="ml-auto blur-[1.5px] opacity-70">
+                                        <Card className="shadow-lg shadow-foreground/5 flex h-9 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4 border-0 bg-card/80 backdrop-blur">
+                                            <img src="/icons/openclaw.svg" alt="OpenClaw" className="size-4" />
+                                            <span className="text-nowrap font-medium max-sm:text-xs text-sm">OpenClaw</span>
+                                        </Card>
                                     </div>
-                                    
-                                    <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl leading-tight">
-                                        A credit card for your AI agent.
-                                    </h1>
-                                    <p className="text-muted-foreground mt-4 text-lg">
-                                        Give your agent a spending limit. No charge without your approval. Stay in control while AI handles the rest.
-                                    </p>
-
-                                    <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                                        <Button asChild className="pr-1.5" size="lg">
-                                            <Link href="#waitlist">
-                                                <span className="text-nowrap">Join the Waitlist</span>
-                                                <ChevronRight className="opacity-50" />
-                                            </Link>
-                                        </Button>
-                                        <Button asChild variant="outline" size="lg">
-                                            <Link href="#how-it-works">
-                                                <span>See How It Works</span>
-                                            </Link>
-                                        </Button>
+                                    <div className="mx-auto">
+                                        <Card className="shadow-lg shadow-foreground/5 flex h-9 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4 border-0 bg-card/80 backdrop-blur">
+                                            <img src="/icons/claude.svg" alt="Claude" className="size-4" />
+                                            <span className="text-nowrap font-medium max-sm:text-xs text-sm">Claude</span>
+                                        </Card>
                                     </div>
-                                </div>
-                                
-                                {/* Right: Card Mockup */}
-                                <div className="relative flex justify-center">
-                                    <div className="relative">
-                                        {/* Card */}
-                                        <div className="w-72 h-44 bg-gradient-to-br from-foreground to-foreground/80 rounded-2xl p-5 shadow-2xl shadow-foreground/20 transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                                            <div className="flex justify-between items-start">
-                                                <div className="text-background/90 text-sm font-medium">AgentCard</div>
-                                                <div className="flex items-center gap-1">
-                                                    <div className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-                                                    <span className="text-emerald-400 text-xs">Active</span>
-                                                </div>
-                                            </div>
-                                            <div className="mt-8 flex gap-1">
-                                                <div className="w-10 h-7 bg-amber-300/80 rounded" />
-                                            </div>
-                                            <div className="mt-4 flex justify-between items-end">
-                                                <div>
-                                                    <div className="text-background/50 text-xs">Agent</div>
-                                                    <div className="text-background text-sm font-mono">Claude Assistant</div>
-                                                </div>
-                                                <div className="text-right">
-                                                    <div className="text-background/50 text-xs">Limit</div>
-                                                    <div className="text-background text-sm font-mono">$500/mo</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        {/* Notification popup */}
-                                        <div className="absolute -bottom-4 -left-4 bg-card border rounded-xl p-3 shadow-lg w-56 animate-pulse">
-                                            <div className="flex items-start gap-3">
-                                                <div className="size-8 rounded-full bg-amber-100 flex items-center justify-center shrink-0">
-                                                    <Bell className="size-4 text-amber-600" />
-                                                </div>
-                                                <div className="text-xs">
-                                                    <div className="font-medium">Approval needed</div>
-                                                    <div className="text-muted-foreground">$12.99 at Spotify</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div className="mr-auto blur-[1.5px] opacity-70">
+                                        <Card className="shadow-lg shadow-foreground/5 flex h-9 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4 border-0 bg-card/80 backdrop-blur">
+                                            <img src="/icons/gemini.svg" alt="Gemini" className="size-4" />
+                                            <span className="text-nowrap font-medium max-sm:text-xs text-sm">Gemini</span>
+                                        </Card>
+                                    </div>
+                                    <div className="ml-auto">
+                                        <Card className="shadow-lg shadow-foreground/5 flex h-9 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4 border-0 bg-card/80 backdrop-blur">
+                                            <img src="/icons/comet.svg" alt="Comet" className="size-4" />
+                                            <span className="text-nowrap font-medium max-sm:text-xs text-sm">Comet</span>
+                                        </Card>
+                                    </div>
+                                    <div className="mx-auto blur-[1.5px] opacity-70">
+                                        <Card className="shadow-lg shadow-foreground/5 flex h-9 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4 border-0 bg-card/80 backdrop-blur">
+                                            <img src="/icons/browser-use-logo.png" alt="Browser Use" className="size-4" />
+                                            <span className="text-nowrap font-medium max-sm:text-xs text-sm">Browser Use</span>
+                                        </Card>
+                                    </div>
+                                    <div className="mr-auto">
+                                        <Card className="shadow-lg shadow-foreground/5 flex h-9 w-fit items-center gap-2 rounded-xl px-3 sm:h-10 sm:px-4 border-0 bg-card/80 backdrop-blur">
+                                            <img src="/icons/atlas.png" alt="Atlas" className="size-4 rounded" />
+                                            <span className="text-nowrap font-medium max-sm:text-xs text-sm">Atlas</span>
+                                        </Card>
                                     </div>
                                 </div>
                             </div>
+
+                            {/* Centered Hero Content */}
+                            <div className="mx-auto max-w-2xl text-center">
+                                <div className="inline-flex items-center gap-2 rounded-full border bg-card/80 backdrop-blur px-4 py-1.5 text-sm shadow-sm mb-8">
+                                    <span className="size-2 animate-pulse rounded-full bg-emerald-500" />
+                                    <span className="text-muted-foreground">Join 847 people on the waitlist</span>
+                                </div>
+                                
+                                <h1 className="text-balance font-serif text-4xl font-medium sm:text-5xl md:text-6xl leading-tight">
+                                    A credit card for your AI agent.
+                                </h1>
+                                <p className="text-muted-foreground mt-6 text-lg max-w-lg mx-auto">
+                                    Give your agent a spending limit. No charge without your approval. Stay in control while AI handles the rest.
+                                </p>
+
+                                <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                                    <Button asChild className="pr-1.5" size="lg">
+                                        <Link href="#waitlist">
+                                            <span className="text-nowrap">Join the Waitlist</span>
+                                            <ChevronRight className="opacity-50" />
+                                        </Link>
+                                    </Button>
+                                    <Button asChild variant="outline" size="lg">
+                                        <Link href="#how-it-works">
+                                            <span>See How It Works</span>
+                                        </Link>
+                                    </Button>
+                                </div>
+                            </div>
                             
-                            {/* Logo Cloud */}
-                            <div className="mt-20 pt-12 border-t">
-                                <p className="text-center text-sm text-muted-foreground mb-6">Works with any agent that browses or calls APIs</p>
-                                <div className="flex flex-wrap justify-center gap-2">
-                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
-                                        <img src="/icons/openclaw.svg" alt="OpenClaw" className="size-5" />
-                                        <span className="text-nowrap font-medium text-xs">OpenClaw</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
-                                        <img src="/icons/atlas.png" alt="Atlas" className="size-5 rounded" />
-                                        <span className="text-nowrap font-medium text-xs">Atlas</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
-                                        <img src="/icons/comet.svg" alt="Comet" className="size-5" />
-                                        <span className="text-nowrap font-medium text-xs">Comet</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
-                                        <img src="/icons/claude.svg" alt="Claude Code" className="size-5" />
-                                        <span className="text-nowrap font-medium text-xs">Claude Code</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
-                                        <img src="/icons/gemini.svg" alt="Gemini" className="size-5" />
-                                        <span className="text-nowrap font-medium text-xs">Gemini</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
-                                        <img src="/icons/browser-use-logo.png" alt="Browser Use" className="size-5" />
-                                        <span className="text-nowrap font-medium text-xs">Browser Use</span>
-                                    </Card>
-                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm bg-muted/50">
-                                        <span className="text-nowrap font-medium text-xs text-muted-foreground">+ More</span>
-                                    </Card>
+                            {/* Card Mockup - Centered Below */}
+                            <div className="relative flex justify-center mt-16">
+                                <div className="relative">
+                                    {/* Glow Effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-amber-400/20 to-orange-300/20 blur-2xl scale-150 rounded-full" />
+                                    
+                                    {/* Card */}
+                                    <div className="relative w-80 h-48 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 rounded-2xl p-6 shadow-2xl shadow-stone-900/40 transform hover:scale-105 transition-all duration-500 border border-stone-700/50">
+                                        {/* Card Shine Effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent rounded-2xl" />
+                                        
+                                        <div className="relative flex justify-between items-start">
+                                            <div className="text-stone-300 text-sm font-medium tracking-wide">AgentCard</div>
+                                            <div className="flex items-center gap-1.5">
+                                                <div className="size-2 rounded-full bg-emerald-400 animate-pulse shadow-lg shadow-emerald-400/50" />
+                                                <span className="text-emerald-400 text-xs font-medium">Active</span>
+                                            </div>
+                                        </div>
+                                        <div className="mt-8 flex gap-1">
+                                            <div className="w-12 h-8 bg-gradient-to-br from-amber-300 to-amber-500 rounded-md shadow-lg" />
+                                        </div>
+                                        <div className="mt-5 flex justify-between items-end">
+                                            <div>
+                                                <div className="text-stone-500 text-xs uppercase tracking-wider">Agent</div>
+                                                <div className="text-stone-200 text-sm font-mono mt-0.5">Claude Assistant</div>
+                                            </div>
+                                            <div className="text-right">
+                                                <div className="text-stone-500 text-xs uppercase tracking-wider">Limit</div>
+                                                <div className="text-stone-200 text-sm font-mono mt-0.5">$500/mo</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Notification popup */}
+                                    <div className="absolute -bottom-6 -left-8 bg-card border rounded-2xl p-4 shadow-xl w-60">
+                                        <div className="flex items-start gap-3">
+                                            <div className="size-10 rounded-full bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center shrink-0 shadow-sm">
+                                                <Bell className="size-5 text-amber-600" />
+                                            </div>
+                                            <div>
+                                                <div className="font-semibold text-sm">Approval needed</div>
+                                                <div className="text-muted-foreground text-sm">$12.99 at Spotify</div>
+                                                <div className="flex gap-2 mt-2">
+                                                    <button className="px-3 py-1 bg-emerald-500 text-white text-xs font-medium rounded-full hover:bg-emerald-600 transition-colors">Approve</button>
+                                                    <button className="px-3 py-1 bg-stone-200 text-stone-700 text-xs font-medium rounded-full hover:bg-stone-300 transition-colors">Deny</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
