@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card'
 import { HeroHeader } from '@/components/header'
 import { Logo } from '@/components/logo'
 import { ChevronRight, CreditCard, Shield, Eye, Lock, Bell, Smartphone, Zap, Check } from 'lucide-react'
-import { OpenClawLogo, AtlasLogo, CometLogo, BrowserUseLogo } from '@/components/ui/svgs/agent-logos'
+import Image from 'next/image'
 
 export default function HeroSection() {
     const [email, setEmail] = useState('')
@@ -131,19 +131,19 @@ export default function HeroSection() {
                                 <p className="text-center text-sm text-muted-foreground mb-6">Works with any agent that browses or calls APIs</p>
                                 <div className="flex flex-wrap justify-center gap-3">
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <OpenClawLogo className="size-5" />
+                                        <Image src="/icons/openclaw.svg" alt="OpenClaw" width={20} height={20} className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">OpenClaw</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <AtlasLogo className="size-5" />
+                                        <Image src="https://chatgpt.com/favicon.ico" alt="Atlas" width={20} height={20} className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Atlas</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <CometLogo className="size-5" />
+                                        <Image src="/icons/perplexity.svg" alt="Comet" width={20} height={20} className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Comet</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <BrowserUseLogo className="size-5" />
+                                        <Image src="https://browser-use.com/favicon.ico" alt="Browser Use" width={20} height={20} className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Browser Use</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm bg-muted/50">
