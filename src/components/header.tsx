@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { Menu, X, CreditCard } from 'lucide-react'
+import { Logo } from '@/components/logo'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
@@ -21,7 +22,6 @@ export const HeroHeader = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
-    
     return (
         <header>
             <nav
@@ -34,10 +34,7 @@ export const HeroHeader = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <div className="flex size-8 items-center justify-center rounded-full bg-foreground">
-                                  <CreditCard className="size-4 text-background" />
-                                </div>
-                                <span className="font-semibold">AgentCard</span>
+                                <Logo />
                             </Link>
 
                             <button
@@ -85,9 +82,19 @@ export const HeroHeader = () => {
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button
                                     asChild
-                                    size="sm">
+                                    variant="ghost"
+                                    size="sm"
+                                    className={cn(isScrolled && 'lg:hidden')}>
                                     <Link href="#waitlist">
                                         <span>Join Waitlist</span>
+                                    </Link>
+                                </Button>
+                                <Button
+                                    asChild
+                                    size="sm"
+                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
+                                    <Link href="#waitlist">
+                                        <span>Get Started</span>
                                     </Link>
                                 </Button>
                             </div>
