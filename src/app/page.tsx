@@ -8,15 +8,12 @@ import { Card } from '@/components/ui/card'
 import { HeroHeader } from '@/components/header'
 import { Logo } from '@/components/logo'
 import { ChevronRight, CreditCard, Shield, Eye, Lock, Bell, Smartphone, Zap, Check } from 'lucide-react'
-import { OpenAI } from '@/components/ui/svgs/openai'
-import { Anthropic } from '@/components/ui/svgs/anthropic'
-import { LangChain } from '@/components/ui/svgs/langchain'
+import { OpenClaw } from '@/components/ui/svgs/openclaw'
 import { AutoGPT } from '@/components/ui/svgs/autogpt'
 import { CrewAI } from '@/components/ui/svgs/crewai'
-import { OpenClaw } from '@/components/ui/svgs/openclaw'
-import { Claude } from '@/components/ui/svgs/claude'
-import { Stripe } from '@/components/ui/svgs/stripe'
-import { Vercel } from '@/components/ui/svgs/vercel'
+import { LangChain } from '@/components/ui/svgs/langchain'
+import { BrowserUse } from '@/components/ui/svgs/browseruse'
+import { Operator } from '@/components/ui/svgs/operator'
 
 export default function HeroSection() {
     const [email, setEmail] = useState('')
@@ -44,8 +41,8 @@ export default function HeroSection() {
             a: "The transaction is automatically declined. Your agent physically cannot exceed the spending limit you set. You stay in control, always."
         },
         {
-            q: "Which AI platforms are supported?",
-            a: "AgentCard works with any AI agent that can make HTTP requests. We have SDKs for OpenAI, Anthropic, LangChain, and more. If your agent can call an API, it can use AgentCard."
+            q: "Which agent frameworks are supported?",
+            a: "AgentCard works with any agent that browses the web or makes API calls. OpenClaw, Operator, Browser Use, AutoGPT, CrewAI, LangChain agents — if it can click or call, it works with AgentCard."
         },
         {
             q: "Is my money safe?",
@@ -136,26 +133,31 @@ export default function HeroSection() {
                             
                             {/* Logo Cloud */}
                             <div className="mt-20 pt-12 border-t">
-                                <p className="text-center text-sm text-muted-foreground mb-6">Works with your favorite AI platforms</p>
-                                <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+                                <p className="text-center text-sm text-muted-foreground mb-6">Works with any agent that browses or calls APIs</p>
+                                <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
                                     <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11">
-                                        <OpenAI className="size-4 fill-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">OpenAI</span>
+                                        <OpenClaw className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">OpenClaw</span>
                                     </Card>
                                     <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11">
-                                        <Claude className="size-4 fill-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Claude</span>
+                                        <Operator className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Operator</span>
                                     </Card>
                                     <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11">
-                                        <LangChain className="size-4 text-foreground" />
-                                        <span className="text-nowrap font-medium text-xs sm:text-sm">LangChain</span>
+                                        <BrowserUse className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">Browser Use</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11 max-sm:hidden">
+                                        <AutoGPT className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">AutoGPT</span>
                                     </Card>
                                     <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11 max-sm:hidden">
                                         <CrewAI className="size-4 text-foreground" />
                                         <span className="text-nowrap font-medium text-xs sm:text-sm">CrewAI</span>
                                     </Card>
                                     <Card className="flex h-10 items-center justify-center gap-2 rounded-xl px-3 shadow-sm sm:h-11 max-sm:hidden">
-                                        <span className="text-muted-foreground text-xs sm:text-sm">+ Any Agent</span>
+                                        <LangChain className="size-4 text-foreground" />
+                                        <span className="text-nowrap font-medium text-xs sm:text-sm">LangChain</span>
                                     </Card>
                                 </div>
                             </div>
