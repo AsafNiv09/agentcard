@@ -129,25 +129,33 @@ export default function HeroSection() {
                             {/* Logo Cloud */}
                             <div className="mt-20 pt-12 border-t">
                                 <p className="text-center text-sm text-muted-foreground mb-6">Works with any agent that browses or calls APIs</p>
-                                <div className="flex flex-wrap justify-center gap-3">
-                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                <div className="flex flex-wrap justify-center gap-2">
+                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
                                         <img src="/icons/openclaw.svg" alt="OpenClaw" className="size-5" />
-                                        <span className="text-nowrap font-medium text-sm">OpenClaw</span>
+                                        <span className="text-nowrap font-medium text-xs">OpenClaw</span>
                                     </Card>
-                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <img src="/icons/chatgpt.svg" alt="Atlas" className="size-5" />
-                                        <span className="text-nowrap font-medium text-sm">Atlas</span>
+                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
+                                        <img src="/icons/atlas.png" alt="Atlas" className="size-5 rounded" />
+                                        <span className="text-nowrap font-medium text-xs">Atlas</span>
                                     </Card>
-                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
                                         <img src="/icons/comet.svg" alt="Comet" className="size-5" />
-                                        <span className="text-nowrap font-medium text-sm">Comet</span>
+                                        <span className="text-nowrap font-medium text-xs">Comet</span>
                                     </Card>
-                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
+                                        <img src="/icons/claude.svg" alt="Claude Code" className="size-5" />
+                                        <span className="text-nowrap font-medium text-xs">Claude Code</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
+                                        <img src="/icons/gemini.svg" alt="Gemini" className="size-5" />
+                                        <span className="text-nowrap font-medium text-xs">Gemini</span>
+                                    </Card>
+                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm">
                                         <img src="/icons/browser-use-logo.png" alt="Browser Use" className="size-5" />
-                                        <span className="text-nowrap font-medium text-sm">Browser Use</span>
+                                        <span className="text-nowrap font-medium text-xs">Browser Use</span>
                                     </Card>
-                                    <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm bg-muted/50">
-                                        <span className="text-nowrap font-medium text-sm text-muted-foreground">+ Any Agent</span>
+                                    <Card className="flex h-10 items-center gap-2 rounded-xl px-3 shadow-sm bg-muted/50">
+                                        <span className="text-nowrap font-medium text-xs text-muted-foreground">+ More</span>
                                     </Card>
                                 </div>
                             </div>
