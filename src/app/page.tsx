@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card'
 import { HeroHeader } from '@/components/header'
 import { Logo } from '@/components/logo'
 import { ChevronRight, CreditCard, Shield, Eye, Lock, Bell, Smartphone, Zap, Check } from 'lucide-react'
-import Image from 'next/image'
+// Agent logos section uses text only for now
 
 export default function HeroSection() {
     const [email, setEmail] = useState('')
@@ -131,19 +131,17 @@ export default function HeroSection() {
                                 <p className="text-center text-sm text-muted-foreground mb-6">Works with any agent that browses or calls APIs</p>
                                 <div className="flex flex-wrap justify-center gap-3">
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <Image src="/icons/openclaw.svg" alt="OpenClaw" width={20} height={20} className="size-5" />
+                                        <img src="/icons/openclaw.svg" alt="OpenClaw" className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">OpenClaw</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <Image src="https://chatgpt.com/favicon.ico" alt="Atlas" width={20} height={20} className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Atlas</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <Image src="/icons/perplexity.svg" alt="Comet" width={20} height={20} className="size-5" />
+                                        <img src="/icons/perplexity.svg" alt="Comet" className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Comet</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <Image src="https://browser-use.com/favicon.ico" alt="Browser Use" width={20} height={20} className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Browser Use</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm bg-muted/50">
