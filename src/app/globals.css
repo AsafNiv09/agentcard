@@ -4,6 +4,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.9779 0.0042 56.38);
+  --foreground: oklch(0.3421 0.0379 61.15);
+  --card: white;
+  --card-foreground: oklch(0.3421 0.0379 61.15);
+  --primary: oklch(0.5967 0.0558 61.59);
+  --primary-foreground: oklch(0.1448 0 0);
+  --muted: oklch(0.9068 0.0112 89.73);
+  --muted-foreground: oklch(0.4563 0.0061 48.59);
+  --border: oklch(0.3421 0.0379 61.15 / 7.5%);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -12,4 +25,11 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background-color: var(--primary);
+  color: white;
 }
