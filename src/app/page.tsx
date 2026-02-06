@@ -135,13 +135,15 @@ export default function HeroSection() {
                                         <span className="text-nowrap font-medium text-sm">OpenClaw</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                        <img src="/icons/chatgpt.svg" alt="Atlas" className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Atlas</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <img src="/icons/perplexity.svg" alt="Comet" className="size-5" />
+                                        <img src="/icons/perplexity.png" alt="Comet" className="size-5 rounded" />
                                         <span className="text-nowrap font-medium text-sm">Comet</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
+                                        <img src="/icons/browser-use-logo.png" alt="Browser Use" className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Browser Use</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm bg-muted/50">
