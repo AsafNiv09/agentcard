@@ -139,7 +139,7 @@ export default function HeroSection() {
                                         <span className="text-nowrap font-medium text-sm">Atlas</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
-                                        <img src="/icons/perplexity.png" alt="Comet" className="size-5 rounded" />
+                                        <img src="/icons/comet.svg" alt="Comet" className="size-5" />
                                         <span className="text-nowrap font-medium text-sm">Comet</span>
                                     </Card>
                                     <Card className="flex h-11 items-center gap-2 rounded-xl px-4 shadow-sm">
