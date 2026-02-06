@@ -8,7 +8,7 @@ import { Card } from '@/components/ui/card'
 import { HeroHeader } from '@/components/header'
 import { Logo } from '@/components/logo'
 import { ChevronRight, CreditCard, Shield, Eye, Lock, Bell, Smartphone, Zap, Check } from 'lucide-react'
-// Agent logos section uses text only for now
+import Image from 'next/image'
 
 export default function HeroSection() {
     const [email, setEmail] = useState('')
@@ -51,7 +51,20 @@ export default function HeroSection() {
             <main className="overflow-hidden">
                 {/* Hero Section */}
                 <section className="bg-background">
-                    <div className="relative py-24 md:pt-40 md:pb-32">
+                    <div className="relative pb-32 pt-44">
+                        {/* Background Image with Radial Mask */}
+                        <div className="absolute inset-0 aspect-square opacity-50 dark:opacity-10 md:aspect-[9/4]" style={{
+                            maskImage: 'radial-gradient(ellipse 75% 100% at top, black 45%, transparent 75%)',
+                            WebkitMaskImage: 'radial-gradient(ellipse 75% 100% at top, black 45%, transparent 75%)'
+                        }}>
+                            <Image
+                                src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2232&auto=format&fit=crop"
+                                alt="hero background"
+                                fill
+                                className="object-cover object-top"
+                                priority
+                            />
+                        </div>
                         <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
                             <div className="grid gap-12 md:grid-cols-2 md:items-center">
                                 {/* Left: Copy */}
